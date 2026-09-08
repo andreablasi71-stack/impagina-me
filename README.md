@@ -10,8 +10,9 @@ Online su <https://impagina.me> · pubblicato con GitHub Pages.
 
 | File | A cosa serve |
 |------|--------------|
-| `index.html` | La homepage. Presentazione de "Il laboratorio editoriale", come è fatto e cosa offre |
+| `index.html` | La homepage con logo ufficiale, presentazione de "Il laboratorio editoriale", come è fatto e servizi |
 | `laboratorio-editoriale.md` | Il testo integrale dello stack e dei servizi offerti dal laboratorio |
+| `media/` | Cartella asset: logo definitivo di impagina.me (SVG vettoriale e PNG ad alta risoluzione) |
 | `404.html` | Pagina mostrata quando un indirizzo non esiste |
 | `robots.txt` | Istruzioni per i motori di ricerca |
 | `sitemap.xml` | L'elenco delle pagine per i motori di ricerca |
@@ -26,8 +27,8 @@ Si apre `index.html` e si scrive dentro.
 Salvato il file, si pubblica così:
 
 ```bash
-git add index.html laboratorio-editoriale.md
-git commit -m "docs: aggiorna contenuti laboratorio editoriale"
+git add index.html laboratorio-editoriale.md media/
+git commit -m "docs: aggiorna contenuti"
 git push
 ```
 

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
@@ -92,11 +92,6 @@
     height: auto;
     display: block;
     margin: 0 auto;
-  }
-  @media (prefers-color-scheme: dark) {
-    .main-logo {
-      filter: drop-shadow(0 0 1.5px rgba(255,255,255,0.75)) drop-shadow(0 4px 20px rgba(0,0,0,0.6));
-    }
   }
 
   .firma {
@@ -311,7 +306,10 @@
   <header class="hero">
     <div class="hero-content">
       <div class="logo-wrap">
-        <img src="media/logo.svg" alt="impagina.me" class="main-logo" width="340" height="267">
+        <picture>
+          <source srcset="media/logo-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="media/logo.svg" alt="impagina.me" class="main-logo" width="340" height="267">
+        </picture>
       </div>
       
       <p class="firma">Andrea Blasi</p>

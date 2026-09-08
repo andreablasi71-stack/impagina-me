@@ -3,195 +3,354 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>impagina.me — Il laboratorio editoriale di Andrea Blasi</title>
-<meta name="description" content="Uno stack di strumenti interamente locale per la grafica e la produzione editoriale ricorrente. Servizi editoriali, impaginazione e automazioni di Andrea Blasi.">
+<title>impagina.me — Andrea Blasi | Grafica Editoriale &amp; Automazioni</title>
+<meta name="description" content="Laboratorio editoriale di Andrea Blasi: grafica editoriale, automazioni di produzione e intelligenza artificiale locale per testate, periodici e documenti istituzionali.">
 <link rel="canonical" href="https://impagina.me/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph & Social Media -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://impagina.me/">
-<meta property="og:title" content="impagina.me — Il laboratorio editoriale di Andrea Blasi">
-<meta property="og:description" content="Grafica editoriale, automazioni di produzione e intelligenza artificiale locale per testate, redazioni e periodici.">
+<meta property="og:title" content="impagina.me — Andrea Blasi">
+<meta property="og:description" content="Grafica editoriale, automazioni di produzione e AI locale per testate, periodici e documenti istituzionali.">
+<meta property="og:image" content="https://impagina.me/media/logo.png">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://impagina.me/media/logo.png">
+<meta name="twitter:title" content="impagina.me — Andrea Blasi">
+<meta name="twitter:description" content="Grafica editoriale, automazioni di produzione e AI locale.">
 <meta name="twitter:image" content="https://impagina.me/media/logo.png">
+
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="media/logo.svg">
 <link rel="alternate icon" type="image/png" href="media/logo.png">
+
 <style>
-  :root{
-    --carta:#f7f4ee; --inchiostro:#1c1b19; --grigio:#5f5a52;
-    --filo:#ddd6ca; --accento:#8c2f28; --blocco:#ffffff;
-    --tag-bg:#ece6da; --tag-fg:#3d3a35;
+  :root {
+    --carta: #f7f4ee;
+    --inchiostro: #1c1b19;
+    --grigio: #5d5850;
+    --filo: #ddd6ca;
+    --accento: #8c2f28;
+    --blocco: #ffffff;
+    --blocco-alt: #f1ecdf;
+    --tag-bg: #ece5d8;
+    --tag-fg: #3d3a35;
+    --bottone-bg: #1c1b19;
+    --bottone-fg: #f7f4ee;
   }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --carta:#141312; --inchiostro:#ece7df; --grigio:#a09990;
-      --filo:#2b2824; --accento:#e07b72; --blocco:#1a1917;
-      --tag-bg:#252320; --tag-fg:#d0c9bf;
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --carta: #131211;
+      --inchiostro: #ece7df;
+      --grigio: #a29b91;
+      --filo: #2b2824;
+      --accento: #e27a71;
+      --blocco: #1a1917;
+      --blocco-alt: #22201d;
+      --tag-bg: #272522;
+      --tag-fg: #d2cbc0;
+      --bottone-bg: #ece7df;
+      --bottone-fg: #131211;
     }
   }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{
-    background:var(--carta); color:var(--inchiostro);
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-    line-height:1.65; -webkit-font-smoothing:antialiased;
-    min-height:100vh; display:flex; flex-direction:column;
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--carta);
+    color: var(--inchiostro);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap{
-    flex:1; width:100%; max-width:46rem; margin:0 auto;
-    padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,4vw,2rem);
+
+  /* HERO CENTRATA */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+    position: relative;
   }
-  .logo-container{
-    margin:0 0 1.75rem;
-    display:inline-block;
+  .hero-content {
+    max-width: 38rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .site-logo{
-    width:clamp(180px, 36vw, 250px);
-    height:auto;
-    display:block;
+  .logo-wrap {
+    margin-bottom: 2rem;
+    display: inline-block;
   }
-  @media (prefers-color-scheme: dark){
-    .site-logo{
-      filter:drop-shadow(0 0 1px rgba(255,255,255,0.75));
+  .main-logo {
+    width: clamp(220px, 50vw, 340px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  @media (prefers-color-scheme: dark) {
+    .main-logo {
+      filter: drop-shadow(0 0 1.5px rgba(255,255,255,0.75)) drop-shadow(0 4px 20px rgba(0,0,0,0.6));
     }
   }
-  .occhiello{
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:.75rem; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--grigio); margin:0 0 1rem; font-weight:600;
-  }
-  h1{
-    font-size:clamp(2.6rem,8vw,4.2rem); line-height:1.05; font-weight:600;
-    letter-spacing:-.03em; margin:0 0 .5rem;
-  }
-  h1 .dot{color:var(--accento)}
-  .firma{
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:1.15rem; font-weight:600; letter-spacing:.01em; margin:0 0 .2rem;
-  }
-  .ruolo{
-    font-size:1.15rem; color:var(--grigio); margin:0 0 1.75rem; font-style:italic;
-  }
-  .filo{border:0; border-top:2px solid var(--accento); margin:0 0 2.25rem; width:4.5rem}
-  
-  .intro-box{
-    font-size:1.12rem; margin:0 0 2.5rem; line-height:1.6;
-    padding-bottom:1.75rem; border-bottom:1px solid var(--filo);
-  }
-  .intro-box strong{font-weight:600}
 
-  h2{
-    font-size:clamp(1.6rem,4.5vw,2.1rem); line-height:1.2; font-weight:600;
-    letter-spacing:-.02em; margin:2.75rem 0 1.25rem;
+  .firma {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.45rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.35rem;
   }
-  h3{
-    font-size:clamp(1.2rem,3.2vw,1.4rem); line-height:1.3; font-weight:600;
-    margin:1.75rem 0 .6rem; color:var(--inchiostro);
+  .ruolo {
+    font-size: clamp(1.05rem, 2.8vw, 1.25rem);
+    color: var(--grigio);
+    font-style: italic;
+    margin-bottom: 1.25rem;
   }
-  h4{
-    font-size:1.05rem; font-weight:600; margin:1.2rem 0 .3rem;
+  .filo-centro {
+    width: 3.5rem;
+    height: 2px;
+    background: var(--accento);
+    border: none;
+    margin: 0 auto 1.5rem;
   }
-  p{margin:0 0 1rem}
-
-  .pilastro{
-    background:var(--blocco); border:1px solid var(--filo);
-    border-radius:3px; padding:1.4rem 1.5rem; margin-bottom:1.5rem;
-  }
-  .pilastro h3{margin-top:0}
-  .sottotitolo-pilastro{
-    font-style:italic; color:var(--grigio); margin-bottom:.85rem; font-size:1.02rem;
-  }
-  
-  ul{margin:0 0 1rem; padding-left:1.3rem}
-  li{margin-bottom:.5rem}
-  li strong{font-weight:600}
-
-  .tags{
-    display:flex; flex-wrap:wrap; gap:.4rem .5rem; margin:.75rem 0;
-    font-family:ui-monospace,"Cascadia Code","Source Code Pro",Menlo,monospace;
-    font-size:.82rem;
-  }
-  .tag{
-    background:var(--tag-bg); color:var(--tag-fg); padding:.2rem .5rem;
-    border-radius:2px;
+  .payoff {
+    font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+    color: var(--inchiostro);
   }
 
-  .servizi-grid{
-    display:grid; grid-template-columns:1fr; gap:1.25rem; margin:1.5rem 0;
+  /* BOTTONI D'AZIONE */
+  .cta-group {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
   }
-  @media (min-width: 600px){
-    .servizi-grid{grid-template-columns:1fr 1fr}
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s ease;
   }
-  .servizio-card{
-    background:var(--blocco); border:1px solid var(--filo);
-    border-top:3px solid var(--accento); padding:1.25rem;
-    border-radius:2px; display:flex; flex-direction:column;
+  .btn-primary {
+    background: var(--bottone-bg);
+    color: var(--bottone-fg);
   }
-  .servizio-card h3{margin:0 0 .6rem; font-size:1.15rem}
-  .servizio-card p{font-size:.98rem; margin:0; color:var(--inchiostro); line-height:1.55}
+  .btn-primary:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--inchiostro);
+    border: 1px solid var(--filo);
+  }
+  .btn-secondary:hover {
+    background: var(--blocco);
+    border-color: var(--accento);
+    color: var(--accento);
+  }
 
-  .garanzie{
-    background:var(--blocco); border:1px solid var(--filo);
-    border-left:4px solid var(--accento); padding:1.25rem 1.5rem;
-    margin:2.5rem 0; border-radius:2px;
+  /* LINK DI SCROLL IN BASSO */
+  .scroll-down {
+    position: absolute;
+    bottom: 1.5rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 0.78rem;
+    color: var(--grigio);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
   }
-  .garanzie h3{margin-top:0; font-size:1.2rem}
-  .garanzie ul{margin:0; padding-left:1.25rem}
+  .scroll-down:hover { opacity: 1; color: var(--accento); }
+  .scroll-arrow {
+    width: 14px; height: 14px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
 
-  .contatti{
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    background:var(--blocco); border:1px solid var(--filo);
-    padding:1.5rem; margin:2.75rem 0 1.5rem; border-radius:3px;
+  /* SEZIONE DETTAGLI LAB & SERVIZI */
+  .dettagli {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem);
+    border-top: 1px solid var(--filo);
   }
-  .contatti h3{margin:0 0 .75rem; font-size:1.1rem; font-family:inherit}
-  .contatti-elenco{display:flex; flex-direction:column; gap:.6rem; font-size:1rem}
-  .contatti a{
-    color:var(--inchiostro); text-decoration:none;
-    border-bottom:1px solid var(--accento); padding-bottom:2px;
-    width:fit-content;
+  .occhiello {
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--grigio);
+    margin-bottom: 0.6rem;
+    font-weight: 600;
   }
-  .contatti a:hover,.contatti a:focus-visible{color:var(--accento)}
-  a:focus-visible{outline:2px solid var(--accento); outline-offset:3px; border-radius:2px}
+  h2 {
+    font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 2.75rem 0 1.25rem;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-size: clamp(1.2rem, 3.2vw, 1.4rem);
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 1.75rem 0 0.6rem;
+  }
+  p { margin: 0 0 1rem; }
 
-  footer{
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:.8rem; color:var(--grigio); border-top:1px solid var(--filo);
-    padding:1.5rem clamp(1.25rem,4vw,2rem); max-width:46rem; margin:0 auto; width:100%;
+  .intro-stack {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+  }
+
+  .card-pilastro {
+    background: var(--blocco);
+    border: 1px solid var(--filo);
+    border-radius: 3px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .card-pilastro h3 { margin-top: 0; }
+  .sottotitolo {
+    font-style: italic;
+    color: var(--grigio);
+    margin-bottom: 0.85rem;
+  }
+  ul { margin: 0 0 1rem; padding-left: 1.3rem; }
+  li { margin-bottom: 0.5rem; }
+  li strong { font-weight: 600; }
+
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 0.75rem 0;
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+    font-size: 0.82rem;
+  }
+  .tag {
+    background: var(--tag-bg); color: var(--tag-fg); padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  /* GRIGLIA SERVIZI */
+  .servizi-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 1.5rem 0;
+  }
+  @media (min-width: 600px) {
+    .servizi-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .servizio-item {
+    background: var(--blocco); border: 1px solid var(--filo);
+    border-top: 3px solid var(--accento); padding: 1.35rem;
+    border-radius: 2px;
+  }
+  .servizio-item h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+  .servizio-item p { font-size: 0.98rem; margin: 0; line-height: 1.55; }
+
+  /* GARANZIE */
+  .garanzie {
+    background: var(--blocco); border: 1px solid var(--filo);
+    border-left: 4px solid var(--accento); padding: 1.35rem 1.6rem;
+    margin: 2.5rem 0; border-radius: 2px;
+  }
+  .garanzie h3 { margin-top: 0; font-size: 1.2rem; }
+  .garanzie ul { margin: 0; padding-left: 1.25rem; }
+
+  /* CONTATTI */
+  .contatti-box {
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: var(--blocco-alt); border: 1px solid var(--filo);
+    padding: 1.75rem; margin: 3rem 0 1.5rem; border-radius: 3px;
+    text-align: center;
+  }
+  .contatti-box h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+  .contatti-box p { color: var(--grigio); margin-bottom: 1.25rem; font-size: 0.98rem; }
+  .contatti-links {
+    display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center;
+    font-size: 1.05rem; font-weight: 500;
+  }
+  .contatti-links a {
+    color: var(--inchiostro); text-decoration: none;
+    border-bottom: 1px solid var(--accento); padding-bottom: 2px;
+  }
+  .contatti-links a:hover { color: var(--accento); }
+
+  footer {
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 0.8rem; color: var(--grigio); border-top: 1px solid var(--filo);
+    padding: 1.75rem 1.5rem; text-align: center;
   }
 </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="logo-container">
-      <img src="media/logo.svg" alt="impagina.me — Logo ufficiale" class="site-logo" width="250" height="196">
-    </div>
-    <p class="occhiello">Laboratorio Editoriale &middot; Grafica &middot; Automazioni</p>
-    <h1>impagina<span class="dot">.</span>me</h1>
-    <p class="firma">Andrea Blasi</p>
-    <p class="ruolo">Grafica editoriale, automazione della produzione e AI locale</p>
-    <hr class="filo">
 
-    <section class="intro-box">
-      <p><strong>Il laboratorio editoriale</strong></p>
-      <p>
-        Uno stack di strumenti che gira interamente sui miei computer, senza servizi esterni.
-        Nasce per automatizzare la produzione editoriale ricorrente — notiziari, comunicati,
-        rassegne — e per garantire che le uscite a scadenza fissa non saltino.
+  <!-- HERO LANDING PAGE CON LOGO AL CENTRO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-wrap">
+        <img src="media/logo.svg" alt="impagina.me" class="main-logo" width="340" height="267">
+      </div>
+      
+      <p class="firma">Andrea Blasi</p>
+      <p class="ruolo">Grafica editoriale &middot; Automazioni di produzione &middot; AI locale</p>
+      <hr class="filo-centro">
+
+      <p class="payoff">
+        Uno stack interamente locale progettato per automatizzare la produzione editoriale ricorrente
+        — notiziari, rassegne, comunicati, opuscoli — garantendo puntualit&agrave;, fedelt&agrave; del testo e riservatezza totale.
       </p>
-      <p style="margin:0; color:var(--grigio); font-size:1rem;">
-        Sotto: cosa contiene e cosa permette di offrire.
-      </p>
-    </section>
+
+      <div class="cta-group">
+        <a href="mailto:amministrazione@impagina.me?subject=Richiesta%20informazioni%20progetto%20editoriale" class="btn btn-primary">Contattami per un progetto</a>
+        <a href="#laboratorio" class="btn btn-secondary">Scopri il laboratorio &darr;</a>
+      </div>
+    </div>
+
+    <a href="#laboratorio" class="scroll-down" aria-label="Scorri ai dettagli">
+      <span>Dettagli</span>
+      <div class="scroll-arrow"></div>
+    </a>
+  </header>
+
+  <!-- SEZIONE DETTAGLIATA: IL LABORATORIO EDITORIALE -->
+  <main id="laboratorio" class="dettagli">
+    <p class="occhiello">Architettura &amp; Servizi</p>
+    <h2>Il laboratorio editoriale</h2>
+
+    <p class="intro-stack">
+      Uno stack di strumenti che gira interamente sui miei computer, senza servizi esterni.
+      Nasce per automatizzare la produzione editoriale ricorrente — notiziari, comunicati, rassegne — e per garantire che le uscite a scadenza fissa non saltino.
+    </p>
 
     <section>
       <h2>Come &egrave; fatto</h2>
 
-      <article class="pilastro">
+      <article class="card-pilastro">
         <h3>1. Produzione editoriale quotidiana in automatico</h3>
-        <p class="sottotitolo-pilastro">Da mail grezza a documento pubblicato senza passaggi manuali.</p>
+        <p class="sottotitolo">Da mail grezza a documento pubblicato senza passaggi manuali.</p>
         <ul>
           <li><strong>Pipeline TESTI WORD</strong> — lasci un <code>.docx</code> in una cartella, torna formattato allo standard editoriale che hai definito: font, stili, gerarchie di titoli, gestione delle righe di link, inserimento automatico dei permalink agli atti citati. Zero formattazione a mano.</li>
           <li><strong>Rialzo dei nomi propri</strong> — nella conversione dal maiuscolo riconosce le sigle, una rubrica di nomi che aggiorni tu e i cognomi che seguono un ruolo (&ldquo;il ministro X&rdquo;). I casi incerti finiscono in un report da rileggere.</li>
@@ -200,10 +359,10 @@
         </ul>
       </article>
 
-      <article class="pilastro">
+      <article class="card-pilastro">
         <h3>2. Assistenti di scrittura e ricerca — Open WebUI</h3>
-        <p class="sottotitolo-pilastro">Chat in locale con 9 &ldquo;skill&rdquo; pronte, tarate sul tono di voce del committente, con glossario e linee guida di stile condivise.</p>
-        <p><strong>Skill editoriali attive:</strong></p>
+        <p class="sottotitolo">Chat in locale con 9 &ldquo;skill&rdquo; pronte, tarate sul tono di voce del committente, con glossario e linee guida di stile condivise.</p>
+        <p><strong>Skill editoriali:</strong></p>
         <div class="tags">
           <span class="tag">comunicato-stampa</span>
           <span class="tag">verbale-riunione</span>
@@ -217,12 +376,12 @@
         </div>
         <ul>
           <li><strong>RAG sui documenti</strong> — carichi Word/PDF/scansioni, il sistema li converte in testo (Docling), li indicizza (Qdrant) e ci ragiona sopra: una registrazione di conferenza stampa diventa una bozza di comunicato in pochi minuti.</li>
-          <li><strong>Ricerca web offline &amp; immagini</strong> — ricerca con SearXNG e generazione/ritocco immagini con ComfyUI, senza uscire dai server locali.</li>
+          <li><strong>Ricerca web offline &amp; generazione immagini</strong> — ricerca con SearXNG e generazione/ritocco con ComfyUI, senza uscire dai server locali.</li>
           <li><strong>9 modelli in locale</strong>, ciascuno per un tipo di compito: <code>mistral-nemo</code> per il testo istituzionale italiano, <code>deepseek-r1</code> per il ragionamento, i <code>qwen-coder</code> per il codice, <code>gemma</code> per il multimodale.</li>
         </ul>
       </article>
 
-      <article class="pilastro">
+      <article class="card-pilastro">
         <h3>3. I guardiani — perch&eacute; un guasto non resti invisibile per giorni</h3>
         <ul>
           <li><strong>Spia del laboratorio</strong> — un sorvegliante che sta fuori dai programmi che controlla (cos&igrave; parla anche quando loro si fermano): tiene d&rsquo;occhio contenitori, workflow, credenziali scadute, il programma che sorveglia i Word in arrivo, la saturazione della memoria video, lo spazio sui dischi e il fatto che fisso e portatile non lavorino in doppio. Avvisa solo quando c&rsquo;&egrave; un guaio.</li>
@@ -231,7 +390,7 @@
         </ul>
       </article>
 
-      <article class="pilastro">
+      <article class="card-pilastro">
         <h3>4. Le fondamenta</h3>
         <ul>
           <li><strong>Tutto in locale</strong> — niente cloud dove &egrave; evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.</li>
@@ -244,34 +403,34 @@
 
     <section>
       <h2>Cosa offro con il laboratorio</h2>
-      
+
       <div class="servizi-grid">
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Sistema grafico e impaginazione</h3>
           <p>Definizione di uno standard editoriale — griglia tipografica, stili, gerarchie — e sua applicazione coerente su grandi volumi. Formattazione di circolari, bollettini, atti, rassegne; impaginazione InDesign per opuscoli, periodici e materiali per convegni.</p>
         </div>
 
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Notiziari e periodici ad alto volume</h3>
           <p>Gestione completa di prodotti a cadenza fissa: raccolta dei contenuti, formattazione allo stile della testata, arricchimento con link e riferimenti normativi, esportazione PDF, distribuzione. Sostenibile anche per redazioni di una sola persona.</p>
         </div>
 
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Redazione e revisione</h3>
           <p>Prime stesure di comunicati stampa, newsletter, verbali, sintesi di convegni e conferenze, con tono calibrato sul committente. Editing redazionale, sintesi di documenti lunghi (atti, rapporti, trascrizioni).</p>
         </div>
 
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Ricerca, rassegna e basi di conoscenza</h3>
           <p>Rassegna stampa e ricerca tematica. Estrazione e strutturazione di contenuti da PDF, scansioni e archivi. Costruzione di basi documentali consultabili sul corpus del committente.</p>
         </div>
 
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Immagini</h3>
           <p>Generazione e ritocco di immagini per editoriale e social, ottimizzate per stampa e web.</p>
         </div>
 
-        <div class="servizio-card">
+        <div class="servizio-item">
           <h3>Automazioni editoriali su misura</h3>
           <p>Progettazione di flussi per altre redazioni e uffici stampa: intake da posta e cartelle condivise, formattazione automatica, archiviazione strutturata, pubblicazione multicanale.</p>
         </div>
@@ -286,17 +445,19 @@
       </ul>
     </section>
 
-    <section class="contatti">
-      <h3>Contatti diretti</h3>
-      <div class="contatti-elenco">
-        <span>Email: <a href="mailto:amministrazione@impagina.me">amministrazione@impagina.me</a> &middot; <a href="mailto:andreablasi71@gmail.com">andreablasi71@gmail.com</a></span>
+    <section class="contatti-box">
+      <h3>Parliamo del tuo progetto editoriale</h3>
+      <p>Disponibile per collaborazioni continuative, impostazione di flussi editoriali e produzioni su misura.</p>
+      <div class="contatti-links">
+        <a href="mailto:amministrazione@impagina.me">amministrazione@impagina.me</a>
+        <a href="mailto:andreablasi71@gmail.com">andreablasi71@gmail.com</a>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="anno">2026</span> Andrea Blasi &middot; impagina.me
+    &copy; <span id="anno">2026</span> Andrea Blasi &middot; impagina.me &middot; Tutti i diritti riservati
   </footer>
-  <script>document.getElementById('anno').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('anno').textContent = new Date().getFullYear()</script>
 </body>
 </html>

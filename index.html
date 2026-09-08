@@ -278,20 +278,106 @@
   .contatti-box {
     font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
     background: var(--blocco-alt); border: 1px solid var(--filo);
-    padding: 1.75rem; margin: 3rem 0 1.5rem; border-radius: 3px;
+    padding: clamp(1.5rem, 4vw, 2.5rem); margin: 3.5rem 0 1.5rem; border-radius: 4px;
     text-align: center;
+    scroll-margin-top: 2rem;
   }
-  .contatti-box h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
-  .contatti-box p { color: var(--grigio); margin-bottom: 1.25rem; font-size: 0.98rem; }
-  .contatti-links {
-    display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center;
-    font-size: 1.05rem; font-weight: 500;
+  .contatti-box h3 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+  .contatti-box > p { color: var(--grigio); margin-bottom: 1.75rem; font-size: 1rem; max-width: 32rem; margin-left: auto; margin-right: auto; }
+  
+  .contatti-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    text-align: left;
+    margin-top: 1.25rem;
   }
-  .contatti-links a {
-    color: var(--inchiostro); text-decoration: none;
-    border-bottom: 1px solid var(--accento); padding-bottom: 2px;
+  .contatto-card {
+    background: var(--blocco);
+    border: 1px solid var(--filo);
+    border-radius: 4px;
+    padding: 1.25rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s;
   }
-  .contatti-links a:hover { color: var(--accento); }
+  .contatto-card:hover {
+    border-color: var(--accento);
+  }
+  .contatto-meta {
+    margin-bottom: 1rem;
+  }
+  .contatto-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--grigio);
+    margin-bottom: 0.35rem;
+  }
+  .contatto-email-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .contatto-email-row code {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--inchiostro);
+    word-break: break-all;
+  }
+  .btn-copy {
+    background: transparent;
+    border: 1px solid var(--filo);
+    color: var(--inchiostro);
+    border-radius: 3px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .btn-copy:hover {
+    background: var(--filo);
+  }
+  .contatto-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--filo);
+  }
+  .btn-action {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .btn-action-gmail {
+    background: #ea4335;
+    color: #ffffff !important;
+    border: 1px solid #ea4335;
+  }
+  .btn-action-gmail:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  .btn-action-client {
+    background: transparent;
+    border: 1px solid var(--filo);
+    color: var(--inchiostro);
+  }
+  .btn-action-client:hover {
+    background: var(--filo);
+  }
 
   footer {
     font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -322,7 +408,7 @@
       </p>
 
       <div class="cta-group">
-        <a href="mailto:amministrazione@impagina.me?subject=Richiesta%20informazioni%20progetto%20editoriale" class="btn btn-primary">Contattami per un progetto</a>
+        <a href="#contatti" class="btn btn-primary">Contattami per un progetto &darr;</a>
         <a href="#laboratorio" class="btn btn-secondary">Scopri il laboratorio &darr;</a>
       </div>
     </div>
@@ -443,12 +529,48 @@
       </ul>
     </section>
 
-    <section class="contatti-box">
+    <section id="contatti" class="contatti-box">
       <h3>Parliamo del tuo progetto editoriale</h3>
       <p>Disponibile per collaborazioni continuative, impostazione di flussi editoriali e produzioni su misura.</p>
-      <div class="contatti-links">
-        <a href="mailto:amministrazione@impagina.me">amministrazione@impagina.me</a>
-        <a href="mailto:andreablasi71@gmail.com">andreablasi71@gmail.com</a>
+
+      <div class="contatti-cards">
+        <div class="contatto-card">
+          <div class="contatto-meta">
+            <div class="contatto-label">Email Istituzionale</div>
+            <div class="contatto-email-row">
+              <code>amministrazione@impagina.me</code>
+              <button type="button" class="btn-copy" onclick="copiaEmail('amministrazione@impagina.me', this)">Copia</button>
+            </div>
+          </div>
+          <div class="contatto-actions">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amministrazione@impagina.me&su=Richiesta%20progetto%20editoriale" target="_blank" rel="noopener" class="btn-action btn-action-gmail" title="Componi direttamente in Gmail nel browser">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Apri in Gmail &nearr;
+            </a>
+            <a href="mailto:amministrazione@impagina.me?subject=Richiesta%20informazioni%20progetto%20editoriale" class="btn-action btn-action-client" title="Apri nel programma di posta predefinito">
+              Client di posta
+            </a>
+          </div>
+        </div>
+
+        <div class="contatto-card">
+          <div class="contatto-meta">
+            <div class="contatto-label">Email Diretta Personale</div>
+            <div class="contatto-email-row">
+              <code>andreablasi71@gmail.com</code>
+              <button type="button" class="btn-copy" onclick="copiaEmail('andreablasi71@gmail.com', this)">Copia</button>
+            </div>
+          </div>
+          <div class="contatto-actions">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andreablasi71@gmail.com&su=Richiesta%20progetto%20editoriale" target="_blank" rel="noopener" class="btn-action btn-action-gmail" title="Componi direttamente in Gmail nel browser">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Apri in Gmail &nearr;
+            </a>
+            <a href="mailto:andreablasi71@gmail.com?subject=Richiesta%20informazioni%20progetto%20editoriale" class="btn-action btn-action-client" title="Apri nel programma di posta predefinito">
+              Client di posta
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -456,6 +578,34 @@
   <footer>
     &copy; <span id="anno">2026</span> Andrea Blasi &middot; impagina.me &middot; Tutti i diritti riservati
   </footer>
-  <script>document.getElementById('anno').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('anno').textContent = new Date().getFullYear();
+    function copiaEmail(testo, btn) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(testo).then(function() {
+          segnaCopiato(btn);
+        });
+      } else {
+        const input = document.createElement('input');
+        input.value = testo;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        segnaCopiato(btn);
+      }
+    }
+    function segnaCopiato(btn) {
+      const orig = btn.textContent;
+      btn.textContent = 'Copiato! ✓';
+      btn.style.color = 'var(--accento)';
+      btn.style.borderColor = 'var(--accento)';
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }, 2000);
+    }
+  </script>
 </body>
 </html>

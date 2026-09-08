@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina non trovata — impagina.me</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%238c2f28'/><text x='32' y='46' font-family='Georgia,serif' font-size='40' fill='%23f7f4ee' text-anchor='middle'>i</text></svg>">
+<style>
+  :root{
+    --carta:#f7f4ee; --inchiostro:#1c1b19; --grigio:#6b665e;
+    --filo:#ddd6ca; --accento:#8c2f28;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --carta:#141312; --inchiostro:#ece7df; --grigio:#9a938a;
+      --filo:#2e2b27; --accento:#d9736a;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--carta); color:var(--inchiostro);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    line-height:1.6; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:2rem; text-align:left; -webkit-font-smoothing:antialiased;
+  }
+  .box{max-width:32rem}
+  .codice{
+    font-family:ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--accento); margin:0 0 1rem;
+  }
+  h1{font-size:clamp(1.8rem,6vw,2.6rem); line-height:1.1; margin:0 0 .9rem; font-weight:600; letter-spacing:-.02em}
+  p{color:var(--grigio); margin:0 0 1.5rem}
+  a{
+    font-family:ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:.95rem; color:var(--inchiostro); text-decoration:none;
+    border-bottom:1px solid var(--accento); padding-bottom:2px;
+  }
+  a:hover,a:focus-visible{color:var(--accento)}
+  a:focus-visible{outline:2px solid var(--accento); outline-offset:3px}
+</style>
+</head>
+<body>
+  <div class="box">
+    <p class="codice">Errore 404</p>
+    <h1>Questa pagina non esiste</h1>
+    <p>L&rsquo;indirizzo &egrave; sbagliato, oppure la pagina non &egrave; ancora stata pubblicata: il sito &egrave; in preparazione.</p>
+    <a href="/">Torna alla home</a>
+  </div>
+</body>
+</html>

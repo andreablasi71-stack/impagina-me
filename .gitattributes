@@ -1,0 +1,15 @@
+# Fine riga normalizzate a LF nel repository, qualunque sia la macchina.
+# Senza questo, un commit dal fisso e uno dal portatile mostrano
+# differenze inesistenti su tutte le righe.
+* text=auto eol=lf
+
+# Binari: mai toccare
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

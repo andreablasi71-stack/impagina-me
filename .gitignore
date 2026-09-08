@@ -1,0 +1,26 @@
+# Sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Lavorazioni grafiche: non vanno nel repo del sito
+*.indd
+*.idml
+*.psd
+*.ai
+*.tif
+*.tiff
+
+# Segreti: qui non ce ne sono, ma la rete di sicurezza resta
+.env
+.env.*
+*.key
+*.pem

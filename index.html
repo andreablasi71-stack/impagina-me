@@ -1,43 +1,282 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>impagina.me</title>
+<title>impagina.me — Il laboratorio editoriale di Andrea Blasi</title>
+<meta name="description" content="Uno stack di strumenti interamente locale per la grafica e la produzione editoriale ricorrente. Servizi editoriali, impaginazione e automazioni di Andrea Blasi.">
+<link rel="canonical" href="https://impagina.me/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://impagina.me/">
+<meta property="og:title" content="impagina.me — Il laboratorio editoriale di Andrea Blasi">
+<meta property="og:description" content="Grafica editoriale, automazioni di produzione e intelligenza artificiale locale per testate, redazioni e periodici.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%238c2f28'/><text x='32' y='46' font-family='Georgia,serif' font-size='40' fill='%23f7f4ee' text-anchor='middle'>i</text></svg>">
 <style>
-  :root {
-    --bg: #ffffff;
-    --fg: #111111;
+  :root{
+    --carta:#f7f4ee; --inchiostro:#1c1b19; --grigio:#5f5a52;
+    --filo:#ddd6ca; --accento:#8c2f28; --blocco:#ffffff;
+    --tag-bg:#ece6da; --tag-fg:#3d3a35;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #111111;
-      --fg: #f5f5f5;
+  @media (prefers-color-scheme: dark){
+    :root{
+      --carta:#141312; --inchiostro:#ece7df; --grigio:#a09990;
+      --filo:#2b2824; --accento:#e07b72; --blocco:#1a1917;
+      --tag-bg:#252320; --tag-fg:#d0c9bf;
     }
   }
-  html, body {
-    height: 100%;
-    margin: 0;
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--carta); color:var(--inchiostro);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+    min-height:100vh; display:flex; flex-direction:column;
   }
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .wrap{
+    flex:1; width:100%; max-width:46rem; margin:0 auto;
+    padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,4vw,2rem);
   }
-  h1 {
-    margin: 0;
-    padding: 0 1rem;
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: clamp(1.5rem, 6vw, 3rem);
-    letter-spacing: -0.02em;
-    text-align: center;
+  .occhiello{
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:.75rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--grigio); margin:0 0 1rem; font-weight:600;
+  }
+  h1{
+    font-size:clamp(2.6rem,8vw,4.2rem); line-height:1.05; font-weight:600;
+    letter-spacing:-.03em; margin:0 0 .5rem;
+  }
+  h1 .dot{color:var(--accento)}
+  .firma{
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:1.15rem; font-weight:600; letter-spacing:.01em; margin:0 0 .2rem;
+  }
+  .ruolo{
+    font-size:1.15rem; color:var(--grigio); margin:0 0 1.75rem; font-style:italic;
+  }
+  .filo{border:0; border-top:2px solid var(--accento); margin:0 0 2.25rem; width:4.5rem}
+  
+  .intro-box{
+    font-size:1.12rem; margin:0 0 2.5rem; line-height:1.6;
+    padding-bottom:1.75rem; border-bottom:1px solid var(--filo);
+  }
+  .intro-box strong{font-weight:600}
+
+  h2{
+    font-size:clamp(1.6rem,4.5vw,2.1rem); line-height:1.2; font-weight:600;
+    letter-spacing:-.02em; margin:2.75rem 0 1.25rem;
+  }
+  h3{
+    font-size:clamp(1.2rem,3.2vw,1.4rem); line-height:1.3; font-weight:600;
+    margin:1.75rem 0 .6rem; color:var(--inchiostro);
+  }
+  h4{
+    font-size:1.05rem; font-weight:600; margin:1.2rem 0 .3rem;
+  }
+  p{margin:0 0 1rem}
+
+  .pilastro{
+    background:var(--blocco); border:1px solid var(--filo);
+    border-radius:3px; padding:1.4rem 1.5rem; margin-bottom:1.5rem;
+  }
+  .pilastro h3{margin-top:0}
+  .sottotitolo-pilastro{
+    font-style:italic; color:var(--grigio); margin-bottom:.85rem; font-size:1.02rem;
+  }
+  
+  ul{margin:0 0 1rem; padding-left:1.3rem}
+  li{margin-bottom:.5rem}
+  li strong{font-weight:600}
+
+  .tags{
+    display:flex; flex-wrap:wrap; gap:.4rem .5rem; margin:.75rem 0;
+    font-family:ui-monospace,"Cascadia Code","Source Code Pro",Menlo,monospace;
+    font-size:.82rem;
+  }
+  .tag{
+    background:var(--tag-bg); color:var(--tag-fg); padding:.2rem .5rem;
+    border-radius:2px;
+  }
+
+  .servizi-grid{
+    display:grid; grid-template-columns:1fr; gap:1.25rem; margin:1.5rem 0;
+  }
+  @media (min-width: 600px){
+    .servizi-grid{grid-template-columns:1fr 1fr}
+  }
+  .servizio-card{
+    background:var(--blocco); border:1px solid var(--filo);
+    border-top:3px solid var(--accento); padding:1.25rem;
+    border-radius:2px; display:flex; flex-direction:column;
+  }
+  .servizio-card h3{margin:0 0 .6rem; font-size:1.15rem}
+  .servizio-card p{font-size:.98rem; margin:0; color:var(--inchiostro); line-height:1.55}
+
+  .garanzie{
+    background:var(--blocco); border:1px solid var(--filo);
+    border-left:4px solid var(--accento); padding:1.25rem 1.5rem;
+    margin:2.5rem 0; border-radius:2px;
+  }
+  .garanzie h3{margin-top:0; font-size:1.2rem}
+  .garanzie ul{margin:0; padding-left:1.25rem}
+
+  .contatti{
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--blocco); border:1px solid var(--filo);
+    padding:1.5rem; margin:2.75rem 0 1.5rem; border-radius:3px;
+  }
+  .contatti h3{margin:0 0 .75rem; font-size:1.1rem; font-family:inherit}
+  .contatti-elenco{display:flex; flex-direction:column; gap:.6rem; font-size:1rem}
+  .contatti a{
+    color:var(--inchiostro); text-decoration:none;
+    border-bottom:1px solid var(--accento); padding-bottom:2px;
+    width:fit-content;
+  }
+  .contatti a:hover,.contatti a:focus-visible{color:var(--accento)}
+  a:focus-visible{outline:2px solid var(--accento); outline-offset:3px; border-radius:2px}
+
+  footer{
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:.8rem; color:var(--grigio); border-top:1px solid var(--filo);
+    padding:1.5rem clamp(1.25rem,4vw,2rem); max-width:46rem; margin:0 auto; width:100%;
   }
 </style>
 </head>
 <body>
-<h1>impagina.me</h1>
+  <main class="wrap">
+    <p class="occhiello">Laboratorio Editoriale &middot; Grafica &middot; Automazioni</p>
+    <h1>impagina<span class="dot">.</span>me</h1>
+    <p class="firma">Andrea Blasi</p>
+    <p class="ruolo">Grafica editoriale, automazione della produzione e AI locale</p>
+    <hr class="filo">
+
+    <section class="intro-box">
+      <p><strong>Il laboratorio editoriale</strong></p>
+      <p>
+        Uno stack di strumenti che gira interamente sui miei computer, senza servizi esterni.
+        Nasce per automatizzare la produzione editoriale ricorrente — notiziari, comunicati,
+        rassegne — e per garantire che le uscite a scadenza fissa non saltino.
+      </p>
+      <p style="margin:0; color:var(--grigio); font-size:1rem;">
+        Sotto: cosa contiene e cosa permette di offrire.
+      </p>
+    </section>
+
+    <section>
+      <h2>Come &egrave; fatto</h2>
+
+      <article class="pilastro">
+        <h3>1. Produzione editoriale quotidiana in automatico</h3>
+        <p class="sottotitolo-pilastro">Da mail grezza a documento pubblicato senza passaggi manuali.</p>
+        <ul>
+          <li><strong>Pipeline TESTI WORD</strong> — lasci un <code>.docx</code> in una cartella, torna formattato allo standard editoriale che hai definito: font, stili, gerarchie di titoli, gestione delle righe di link, inserimento automatico dei permalink agli atti citati. Zero formattazione a mano.</li>
+          <li><strong>Rialzo dei nomi propri</strong> — nella conversione dal maiuscolo riconosce le sigle, una rubrica di nomi che aggiorni tu e i cognomi che seguono un ruolo (&ldquo;il ministro X&rdquo;). I casi incerti finiscono in un report da rileggere.</li>
+          <li><strong>Controllo di fedelt&agrave;</strong> — a fine lavorazione confronta parola per parola l&rsquo;originale e il formattato: se manca qualcosa, lo segnala.</li>
+          <li><strong>Prodotti ricorrenti</strong> — la stessa impalcatura regge notiziari quotidiani e settimanali: raccolta, formattazione, arricchimento dei riferimenti, PDF, invio ai destinatari. Il documento pronto alimenta anche l&rsquo;impaginato InDesign per i prodotti pi&ugrave; curati.</li>
+        </ul>
+      </article>
+
+      <article class="pilastro">
+        <h3>2. Assistenti di scrittura e ricerca — Open WebUI</h3>
+        <p class="sottotitolo-pilastro">Chat in locale con 9 &ldquo;skill&rdquo; pronte, tarate sul tono di voce del committente, con glossario e linee guida di stile condivise.</p>
+        <p><strong>Skill editoriali attive:</strong></p>
+        <div class="tags">
+          <span class="tag">comunicato-stampa</span>
+          <span class="tag">verbale-riunione</span>
+          <span class="tag">newsletter</span>
+          <span class="tag">editor-redazionale</span>
+          <span class="tag">analisi-conferenze</span>
+          <span class="tag">grafica-editoriale</span>
+          <span class="tag">ricerca-web</span>
+          <span class="tag">photo</span>
+          <span class="tag">lettura-codice</span>
+        </div>
+        <ul>
+          <li><strong>RAG sui documenti</strong> — carichi Word/PDF/scansioni, il sistema li converte in testo (Docling), li indicizza (Qdrant) e ci ragiona sopra: una registrazione di conferenza stampa diventa una bozza di comunicato in pochi minuti.</li>
+          <li><strong>Ricerca web offline &amp; immagini</strong> — ricerca con SearXNG e generazione/ritocco immagini con ComfyUI, senza uscire dai server locali.</li>
+          <li><strong>9 modelli in locale</strong>, ciascuno per un tipo di compito: <code>mistral-nemo</code> per il testo istituzionale italiano, <code>deepseek-r1</code> per il ragionamento, i <code>qwen-coder</code> per il codice, <code>gemma</code> per il multimodale.</li>
+        </ul>
+      </article>
+
+      <article class="pilastro">
+        <h3>3. I guardiani — perch&eacute; un guasto non resti invisibile per giorni</h3>
+        <ul>
+          <li><strong>Spia del laboratorio</strong> — un sorvegliante che sta fuori dai programmi che controlla (cos&igrave; parla anche quando loro si fermano): tiene d&rsquo;occhio contenitori, workflow, credenziali scadute, il programma che sorveglia i Word in arrivo, la saturazione della memoria video, lo spazio sui dischi e il fatto che fisso e portatile non lavorino in doppio. Avvisa solo quando c&rsquo;&egrave; un guaio.</li>
+          <li><strong>Auto-healing</strong> — prima di avvisarti, prova a rimettere in moto le cose da solo: mette in quarantena le elaborazioni andate storte, riavvia il watcher, controlla che i notiziari siano usciti.</li>
+          <li><strong>Audit semestrale</strong> — a febbraio e agosto confronta quello che gira davvero con la documentazione e elenca i disallineamenti.</li>
+        </ul>
+      </article>
+
+      <article class="pilastro">
+        <h3>4. Le fondamenta</h3>
+        <ul>
+          <li><strong>Tutto in locale</strong> — niente cloud dove &egrave; evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.</li>
+          <li><strong>Replicabile</strong> — ogni componente &egrave; bloccato a una versione precisa: se una macchina si rompe, la ricostruisci identica in poco tempo.</li>
+          <li><strong>Due computer allineati</strong> — stessa configurazione su fisso e portatile: si lavora anche in trasferta senza cambiare niente.</li>
+          <li><strong>Printing Press</strong> — una libreria di strumenti a riga di comando gi&agrave; pronti, con scheduler, per le lavorazioni ricorrenti.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Cosa offro con il laboratorio</h2>
+      
+      <div class="servizi-grid">
+        <div class="servizio-card">
+          <h3>Sistema grafico e impaginazione</h3>
+          <p>Definizione di uno standard editoriale — griglia tipografica, stili, gerarchie — e sua applicazione coerente su grandi volumi. Formattazione di circolari, bollettini, atti, rassegne; impaginazione InDesign per opuscoli, periodici e materiali per convegni.</p>
+        </div>
+
+        <div class="servizio-card">
+          <h3>Notiziari e periodici ad alto volume</h3>
+          <p>Gestione completa di prodotti a cadenza fissa: raccolta dei contenuti, formattazione allo stile della testata, arricchimento con link e riferimenti normativi, esportazione PDF, distribuzione. Sostenibile anche per redazioni di una sola persona.</p>
+        </div>
+
+        <div class="servizio-card">
+          <h3>Redazione e revisione</h3>
+          <p>Prime stesure di comunicati stampa, newsletter, verbali, sintesi di convegni e conferenze, con tono calibrato sul committente. Editing redazionale, sintesi di documenti lunghi (atti, rapporti, trascrizioni).</p>
+        </div>
+
+        <div class="servizio-card">
+          <h3>Ricerca, rassegna e basi di conoscenza</h3>
+          <p>Rassegna stampa e ricerca tematica. Estrazione e strutturazione di contenuti da PDF, scansioni e archivi. Costruzione di basi documentali consultabili sul corpus del committente.</p>
+        </div>
+
+        <div class="servizio-card">
+          <h3>Immagini</h3>
+          <p>Generazione e ritocco di immagini per editoriale e social, ottimizzate per stampa e web.</p>
+        </div>
+
+        <div class="servizio-card">
+          <h3>Automazioni editoriali su misura</h3>
+          <p>Progettazione di flussi per altre redazioni e uffici stampa: intake da posta e cartelle condivise, formattazione automatica, archiviazione strutturata, pubblicazione multicanale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="garanzie">
+      <h3>Due garanzie trasversali</h3>
+      <ul>
+        <li><strong>Riservatezza</strong> — le lavorazioni restano sui miei sistemi: adatto a materiale sotto embargo, dati personali, bozze pre-pubblicazione.</li>
+        <li><strong>Continuit&agrave;</strong> — la sorveglianza automatica assicura che le uscite periodiche rispettino la scadenza anche quando qualcosa si inceppa.</li>
+      </ul>
+    </section>
+
+    <section class="contatti">
+      <h3>Contatti diretti</h3>
+      <div class="contatti-elenco">
+        <span>Email: <a href="mailto:amministrazione@impagina.me">amministrazione@impagina.me</a> &middot; <a href="mailto:andreablasi71@gmail.com">andreablasi71@gmail.com</a></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="anno">2026</span> Andrea Blasi &middot; impagina.me
+  </footer>
+  <script>document.getElementById('anno').textContent=new Date().getFullYear()</script>
 </body>
 </html>

@@ -57,5 +57,5 @@ Progettazione di flussi per altre redazioni e uffici stampa: intake da posta e c
 
 ## Due garanzie trasversali
 
-* **Riservatezza** — le lavorazioni restano sui miei sistemi: adatto a materiale sotto embargo, dati personali, bozze pre-pubblicazione.
+* **Riservatezza** — il lavoro è svolto esclusivamente in locale ove necessario: adatto a materiale sotto embargo, dati personali, bozze pre-pubblicazione.
 * **Continuità** — la sorveglianza automatica assicura che le uscite periodiche rispettino la scadenza anche quando qualcosa si inceppa.

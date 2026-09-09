@@ -18,7 +18,7 @@ Chat in locale con 9 "skill" pronte, tarate sul tono di voce del committente, co
 * **Skill editoriali**: comunicato-stampa, verbale-riunione, newsletter, editor-redazionale, analisi-conferenze, grafica-editoriale, ricerca-web, photo, lettura-codice.
 * **RAG sui documenti** — carichi Word/PDF/scansioni, il sistema li converte in testo (Docling), li indicizza (Qdrant) e ci ragiona sopra: una registrazione di conferenza stampa diventa una bozza di comunicato in pochi minuti.
 * **Ricerca web offline (SearXNG) e generazione immagini (ComfyUI)**, senza uscire dai miei server.
-* **6 modelli in locale**, ciascuno per un tipo di compito: mistral-nemo per il testo istituzionale italiano, qwen2.5-coder per il codice, gemma3 per multimodale e compiti leggeri, qwen2.5 e granite4.1 per testo e RAG con tool use.
+* **Più modelli in locale**, scelti e calibrati di volta in volta sulle esigenze del cliente: testo istituzionale, codice, multimodale, RAG con tool use.
 
 ### 3. I guardiani — perché un guasto non resti invisibile per giorni
 * **Spia del laboratorio** — un sorvegliante che sta fuori dai programmi che controlla (così parla anche quando loro si fermano): tiene d'occhio contenitori, workflow, credenziali scadute, il programma che sorveglia i Word in arrivo, la saturazione della memoria video, lo spazio sui dischi e il fatto che fisso e portatile non lavorino in doppio. Avvisa solo quando c'è un guaio.

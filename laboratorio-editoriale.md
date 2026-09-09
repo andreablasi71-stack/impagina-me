@@ -15,11 +15,10 @@ Da mail grezza a documento pubblicato senza passaggi manuali.
 
 ### 2. Assistenti di scrittura e ricerca — Open WebUI
 Chat in locale con 9 "skill" pronte, tarate sul tono di voce del committente, con glossario e linee guida di stile condivise.
-* **Skill editoriali**: comunicato-stampa, erbale-riunione, 
-ewsletter, ditor-redazionale, nalisi-conferenze, grafica-editoriale, icerca-web, photo, lettura-codice.
+* **Skill editoriali**: comunicato-stampa, verbale-riunione, newsletter, editor-redazionale, analisi-conferenze, grafica-editoriale, ricerca-web, photo, lettura-codice.
 * **RAG sui documenti** — carichi Word/PDF/scansioni, il sistema li converte in testo (Docling), li indicizza (Qdrant) e ci ragiona sopra: una registrazione di conferenza stampa diventa una bozza di comunicato in pochi minuti.
 * **Ricerca web offline (SearXNG) e generazione immagini (ComfyUI)**, senza uscire dai miei server.
-* **9 modelli in locale**, ciascuno per un tipo di compito: mistral-nemo per il testo istituzionale italiano, deepseek-r1 per il ragionamento, i qwen-coder per il codice, gemma per il multimodale.
+* **6 modelli in locale**, ciascuno per un tipo di compito: mistral-nemo per il testo istituzionale italiano, qwen2.5-coder per il codice, gemma3 per multimodale e compiti leggeri, qwen2.5 e granite4.1 per testo e RAG con tool use.
 
 ### 3. I guardiani — perché un guasto non resti invisibile per giorni
 * **Spia del laboratorio** — un sorvegliante che sta fuori dai programmi che controlla (così parla anche quando loro si fermano): tiene d'occhio contenitori, workflow, credenziali scadute, il programma che sorveglia i Word in arrivo, la saturazione della memoria video, lo spazio sui dischi e il fatto che fisso e portatile non lavorino in doppio. Avvisa solo quando c'è un guaio.
@@ -29,7 +28,7 @@ ewsletter, ditor-redazionale, nalisi-conferenze, grafica-editoriale, icerca-w
 ### 4. Le fondamenta
 * **Tutto in locale** — niente cloud dove è evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.
 * **Replicabile** — ogni componente è bloccato a una versione precisa: se una macchina si rompe, la ricostruisci identica in poco tempo.
-* **Due computer allineati** — stessa configurazione su fisso e portatile: si lavora anche in trasferta senza cambiare niente.
+* **Due macchine allineate** — postazione fissa con lo stack completo e un portatile con profilo alleggerito per la trasferta: la produzione editoriale di base non si ferma nemmeno fuori sede.
 * **Printing Press** — una libreria di strumenti a riga di comando già pronti, con scheduler, per le lavorazioni ricorrenti.
 
 ---

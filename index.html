@@ -16,6 +16,7 @@
 <meta property="og:title" content="impagina.me — Andrea Blasi">
 <meta property="og:description" content="Grafica editoriale, automazioni di produzione e AI locale per testate, periodici e documenti istituzionali.">
 <meta property="og:image" content="https://impagina.me/media/logo.png">
+<meta property="og:image:alt" content="Logo di impagina.me">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="impagina.me — Andrea Blasi">
@@ -32,6 +33,7 @@
     --inchiostro: #1c1b19;
     --grigio: #5d5850;
     --filo: #ddd6ca;
+    --filo-interattivo: #7d7362;
     --accento: #8c2f28;
     --blocco: #ffffff;
     --blocco-alt: #f1ecdf;
@@ -46,6 +48,7 @@
       --inchiostro: #ece7df;
       --grigio: #a29b91;
       --filo: #2b2824;
+      --filo-interattivo: #726b60;
       --accento: #e27a71;
       --blocco: #1a1917;
       --blocco-alt: #22201d;
@@ -152,7 +155,7 @@
   .btn-secondary {
     background: transparent;
     color: var(--inchiostro);
-    border: 1px solid var(--filo);
+    border: 1px solid var(--filo-interattivo);
   }
   .btn-secondary:hover {
     background: var(--blocco);
@@ -330,7 +333,7 @@
   }
   .btn-copy {
     background: transparent;
-    border: 1px solid var(--filo);
+    border: 1px solid var(--filo-interattivo);
     color: var(--inchiostro);
     border-radius: 3px;
     padding: 0.25rem 0.6rem;
@@ -362,9 +365,9 @@
     gap: 0.35rem;
   }
   .btn-action-gmail {
-    background: #ea4335;
+    background: #c5221f;
     color: #ffffff !important;
-    border: 1px solid #ea4335;
+    border: 1px solid #c5221f;
   }
   .btn-action-gmail:hover {
     opacity: 0.9;
@@ -372,7 +375,7 @@
   }
   .btn-action-client {
     background: transparent;
-    border: 1px solid var(--filo);
+    border: 1px solid var(--filo-interattivo);
     color: var(--inchiostro);
   }
   .btn-action-client:hover {
@@ -383,6 +386,11 @@
     font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
     font-size: 0.8rem; color: var(--grigio); border-top: 1px solid var(--filo);
     padding: 1.75rem 1.5rem; text-align: center;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accento);
+    outline-offset: 3px;
   }
 </style>
 </head>
@@ -398,7 +406,7 @@
         </picture>
       </div>
       
-      <p class="firma">Andrea Blasi</p>
+      <h1 class="firma">Andrea Blasi</h1>
       <p class="ruolo">Grafica editoriale &middot; Automazioni di produzione &middot; AI locale</p>
       <hr class="filo-centro">
 
@@ -461,7 +469,7 @@
         <ul>
           <li><strong>RAG sui documenti</strong> — carichi Word/PDF/scansioni, il sistema li converte in testo (Docling), li indicizza (Qdrant) e ci ragiona sopra: una registrazione di conferenza stampa diventa una bozza di comunicato in pochi minuti.</li>
           <li><strong>Ricerca web offline &amp; generazione immagini</strong> — ricerca con SearXNG e generazione/ritocco con ComfyUI, senza uscire dai server locali.</li>
-          <li><strong>9 modelli in locale</strong>, ciascuno per un tipo di compito: <code>mistral-nemo</code> per il testo istituzionale italiano, <code>deepseek-r1</code> per il ragionamento, i <code>qwen-coder</code> per il codice, <code>gemma</code> per il multimodale.</li>
+          <li><strong>6 modelli in locale</strong>, ciascuno per un tipo di compito: <code>mistral-nemo</code> per il testo istituzionale italiano, <code>qwen2.5-coder</code> per il codice, <code>gemma3</code> per multimodale e compiti leggeri, <code>qwen2.5</code> e <code>granite4.1</code> per testo e RAG con tool use.</li>
         </ul>
       </article>
 
@@ -479,7 +487,7 @@
         <ul>
           <li><strong>Tutto in locale</strong> — niente cloud dove &egrave; evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.</li>
           <li><strong>Replicabile</strong> — ogni componente &egrave; bloccato a una versione precisa: se una macchina si rompe, la ricostruisci identica in poco tempo.</li>
-          <li><strong>Due computer allineati</strong> — stessa configurazione su fisso e portatile: si lavora anche in trasferta senza cambiare niente.</li>
+          <li><strong>Due macchine allineate</strong> — postazione fissa con lo stack completo e un portatile con profilo alleggerito per la trasferta: la produzione editoriale di base non si ferma nemmeno fuori sede.</li>
           <li><strong>Printing Press</strong> — una libreria di strumenti a riga di comando gi&agrave; pronti, con scheduler, per le lavorazioni ricorrenti.</li>
         </ul>
       </article>

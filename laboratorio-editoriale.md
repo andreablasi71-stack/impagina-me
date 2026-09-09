@@ -27,7 +27,7 @@ Chat in locale con 9 "skill" pronte, tarate sul tono di voce del committente, co
 
 ### 4. Le fondamenta
 * **Tutto in locale** — niente cloud dove è evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.
-* **Replicabile** — ogni componente è bloccato a una versione precisa: se una macchina si rompe, la ricostruisci identica in poco tempo.
+* **Replicabile** — ogni componente è fissato a una versione precisa: una macchina che si rompe si ricostruisce identica in poco tempo.
 * **Due macchine allineate** — postazione fissa con lo stack completo e un portatile con profilo alleggerito per la trasferta: la produzione editoriale di base non si ferma nemmeno fuori sede.
 * **Printing Press** — una libreria di strumenti a riga di comando già pronti, con scheduler, per le lavorazioni ricorrenti.
 

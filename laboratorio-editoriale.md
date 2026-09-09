@@ -23,7 +23,7 @@ Chat in locale con 9 "skill" pronte, tarate sul tono di voce del committente, co
 ### 3. I guardiani — perché un guasto non resti invisibile per giorni
 * **Spia del laboratorio** — un sorvegliante che sta fuori dai programmi che controlla (così parla anche quando loro si fermano): tiene d'occhio contenitori, workflow, credenziali scadute, il programma che sorveglia i Word in arrivo, la saturazione della memoria video, lo spazio sui dischi e il fatto che fisso e portatile non lavorino in doppio. Avvisa solo quando c'è un guaio.
 * **Auto-healing** — prima di avvisarti, prova a rimettere in moto le cose da solo: mette in quarantena le elaborazioni andate storte, riavvia il watcher, controlla che i notiziari siano usciti.
-* **Audit semestrale** — a febbraio e agosto confronta quello che gira davvero con la documentazione e elenca i disallineamenti.
+* **Audit periodico** — confronta quello che gira davvero con la documentazione e elenca i disallineamenti.
 
 ### 4. Le fondamenta
 * **Tutto in locale** — niente cloud dove è evitabile: ricerca, conversione documenti ed embedding sono self-hosted. Nessun contenuto passa da servizi terzi.
